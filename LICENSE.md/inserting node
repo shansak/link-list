@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<conio.h>
+struct Node{
+  int data;
+  struct Node* link;
+};
+struct Node* head;
+
+void insert(int n)
+{
+ struct Node* temp=(Node*)malloc(sizeof(struct Node));
+ temp->data=n;
+ temp->link=head;
+ head=temp;
+}
+void print()
+{
+ struct Node* temp=head;
+ printf("list");
+ while(temp!=NULL)
+ { 
+    printf("%d",temp->data);
+    temp=temp->link;
+  }
+}
+
+
+
+
+
+int main()
+{
+ int n;
+ head=NULL;
+ printf("enter the numbers");
+ scanf("%d",&n);
+ insert(n);
+ print();
+ return 0;
+}
+ 
